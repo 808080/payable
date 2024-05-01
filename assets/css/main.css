@@ -3,6 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-header nav .router-link-exact-active {
+header nav .route--active {
   color: theme('colors.primary');
 }

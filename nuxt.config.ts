@@ -9,6 +9,11 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', 'data-n-head': 'ssr', type: 'image/svg+xml', href: '/favicon.svg' }
       ]
+    },
+  },
+  router: {
+    options: {
+      linkActiveClass: 'route--active'
     }
   },
   css: ['~/assets/css/main.css'],

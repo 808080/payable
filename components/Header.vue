@@ -64,7 +64,7 @@ const closeMenu = () => {
           </nav>
 
           <div class="justify-end sm:flex mt-3 lg:mt-0">
-            <Button @click="closeMenu" variant="transparent" class="sm:mr-2.5 w-full sm:w-auto">Log in</Button>
+            <Button @click="closeMenu" variant="outline" class="sm:mr-2.5 w-full sm:w-auto">Log in</Button>
             <Button @click="closeMenu" to="#" class="mt-2 sm:mt-0 w-full sm:w-auto">Contact Us</Button>
           </div>
         </div>
