@@ -17,8 +17,8 @@ export default {
         secondary: '#022128'
       },
       fontFamily: {
-        ginka: ['Ginka'],
-        karla: ['Karla'],
+        ginka: ['Ginka', 'sans-serif'],
+        karla: ['Karla', 'sans-serif'],
       },
     }
   },

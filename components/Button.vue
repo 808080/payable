@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  label: string,
   to?: string,
   variant?: 'default' | 'transparent'
 }>(), {
@@ -17,10 +16,10 @@ const classList = `px-6 inline-block rounded-xl font-bold text-center leading-[1
 
 <template>
   <NuxtLink v-if="to" :to :class="classList">
-    {{ label }}
+    <slot />
   </NuxtLink>
 
   <button v-else :class="classList">
-    {{ label }}
+    <slot />
   </button>
 </template>
