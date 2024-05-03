@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const currentSolution = ref(0);
+</script>
+
 <template>
   <section class="max-w-[1706px] px-3 py-16 lg:flex justify-between items-center mx-auto text-center">
     <div class="lg:mt-16 lg:mr-12 lg:text-left mb-10">
@@ -44,5 +48,42 @@
         <img v-for="i in [13, 8, 9, 10, 11, 12, 13, 8, 9, 10, 11]" :src="`/logos/logo-${i}.svg`" alt="" />
       </div>
     </div>
+  </section>
+
+  <section class="py-12 lg:py-28 max-w-[1415px] mx-auto md:flex justify-between items-center">
+    <div class="px-5">
+      <Badge class="mb-6">
+        One Integration, Endless Solutions
+      </Badge>
+
+      <TransitionGroup tag="div" class="relative max-w-[540px]" appear enterFromClass="opacity-0 absolute top-0"
+        enterActiveClass="transition-opacity duration-700 ease-linear"
+        leaveActiveClass="transition-opacity duration-700 ease-linear" leaveToClass="opacity-0">
+        <Transition v-for="(solution, index) in solutions" :key="index">
+          <div v-if="currentSolution === index">
+            <h2 class="text-3xl lg:text-[3.125rem]/[1.2] mb-6 max-w-md">
+              {{ solution.title }}
+            </h2>
+
+            <p class="text-lg opacity-50">
+              {{ solution.description }}
+            </p>
+          </div>
+        </Transition>
+      </TransitionGroup>
+
+      <Dots :pagesTotal="solutions.length" @getPage="(p) => currentSolution = p - 1"
+        classDots="bg-[#D9D9D9]/30 size-4 hover:bg-primary/70" classActive="bg-primary w-16" class="gap-2 my-6" />
+    </div>
+
+    <div>
+      <ImagesPaymentMethods class="w-full h-auto max-w-xl md:max-w-none mx-auto mt-12 md:mt-0" />
+    </div>
+  </section>
+
+  <section>
+    <IconsMail />
+    <IconsGear />
+    <IconsLock />
   </section>
 </template>

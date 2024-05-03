@@ -20,8 +20,21 @@ export default {
         ginka: ['Ginka', 'sans-serif'],
         karla: ['Karla', 'sans-serif'],
       },
+      keyframes: {
+        scale: {
+          '0%, 40%, 100%': { transform: 'scale(.73)' },
+          '50%, 90%': { transform: 'none' },
+        },
+        opacity: {
+          '0%, 40%, 100%': { opacity: '0' },
+          '45%, 95%': { opacity: '1' },
+        }
+      },
+      animation: {
+        scale: 'scale 4s ease-in-out infinite',
+        opacity: 'opacity 4s ease-in-out infinite',
+      }
     }
   },
   plugins: [],
 } satisfies Config;
-
