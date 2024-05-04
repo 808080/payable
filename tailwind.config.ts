@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import { themesClasses } from './utils/data';
 
 export default {
   content: [
@@ -36,5 +37,8 @@ export default {
       }
     }
   },
+  safelist: [
+    ...themesClasses
+  ],
   plugins: [],
 } satisfies Config;

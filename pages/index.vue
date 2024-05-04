@@ -10,6 +10,7 @@ const icons = {
 };
 
 const currentSolution = ref(0);
+const currentTheme = ref(themes[0] as ThemeColor);
 </script>
 
 <template>
@@ -91,19 +92,36 @@ const currentSolution = ref(0);
     </div>
   </section>
 
-  <section>
-    <div class="flex flex-wrap max-w-[1474px] mx-auto xl:py-28">
+  <section class="flex flex-wrap max-w-[1474px] mx-auto xl:py-28">
+    <div v-for="feat in features" class="md:basis-1/2 lg:basis-1/3 px-5 xl:px-12 mt-20">
+      <component :is="icons[feat.icon]" class="mb-6" />
 
-      <div v-for="feat in features" class="md:basis-1/2 lg:basis-1/3 px-5 xl:px-12 mt-20">
-        <component :is="icons[feat.icon]" class="mb-6" />
-        <h5 class="text-3xl sm:text-4xl font-bold mb-8">
-          <Logo class="inline w-auto h-7 sm:h-auto" /> {{ feat.title }}
-        </h5>
-        <p class="text-lg opacity-50 max-w-xl">
-          {{ feat.description }}
-        </p>
-      </div>
+      <h5 class="text-3xl sm:text-4xl font-bold mb-8">
+        <Logo class="inline w-auto h-7 sm:h-auto" /> {{ feat.title }}
+      </h5>
 
+      <p class="text-lg opacity-50 max-w-xl">
+        {{ feat.description }}
+      </p>
     </div>
+  </section>
+
+  <section class="text-center py-20 md:py-36">
+    <Badge class="mb-6">
+      Testimonials
+    </Badge>
+
+    <div class="px-3">
+      <h2 class="text-3xl lg:text-[3.125rem]/[1.2] mb-6">Real stories from real customers.</h2>
+
+      <p class="text-lg opacity-50">See what our partners are saying about our services.</p>
+    </div>
+
+    <ImagesCustomTerminal :theme="currentTheme"
+      class="mx-auto w-full h-auto max-w-[832px] my-5 md:mt-16 md:mb-12 p-4" />
+
+    <Dots :pagesTotal="themes.length" @getPage="(p) => currentTheme = themes[p - 1]"
+      classDots="opacity-40 size-5 sm:size-8 hover:opacity-70" :classPerDot="themesClasses"
+      classActive="[&&]:opacity-100 w-16 sm:w-[100px]" class="gap-5 my-6 justify-center" />
   </section>
 </template>
