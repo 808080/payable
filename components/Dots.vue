@@ -25,7 +25,7 @@ onMounted(() => {
 
 <template>
   <div class="flex">
-    <div v-for="i in pagesTotal" @click="handleClick(i)" class="rounded-full duration-700 cursor-pointer"
+    <div v-for="i in pagesTotal" @click="handleClick(i)" class="rounded-full duration-500 cursor-pointer"
       :class="[classDots, classPerDot?.[i], { [classActive]: selected === i }]">
     </div>
   </div>

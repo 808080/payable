@@ -20,3 +20,36 @@ export const solutions = [
     description: 'Explore the endless payments possibilities with payabl. and level-up your business today.'
   }
 ];
+
+export const features = [
+  {
+    icon: 'IconsLock',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  },
+  {
+    icon: 'IconsGear',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  },
+  {
+    icon: 'IconsMail',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  },
+  {
+    icon: 'IconsLock',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  },
+  {
+    icon: 'IconsGear',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  },
+  {
+    icon: 'IconsMail',
+    title: 'gateway',
+    description: 'Game-changing financial solutions for businesses with their eyes on global domination. Explore the endless payments possibilities with payabl. and level-up your business today.'
+  }
+] as const;

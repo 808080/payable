@@ -1,4 +1,14 @@
 <script setup lang="ts">
+import IconsLock from '../components/icons/Lock.vue';
+import IconsGear from '../components/icons/Gear.vue';
+import IconsMail from '../components/icons/Mail.vue';
+
+const icons = {
+  IconsLock,
+  IconsGear,
+  IconsMail,
+};
+
 const currentSolution = ref(0);
 </script>
 
@@ -82,8 +92,18 @@ const currentSolution = ref(0);
   </section>
 
   <section>
-    <IconsMail />
-    <IconsGear />
-    <IconsLock />
+    <div class="flex flex-wrap max-w-[1474px] mx-auto xl:py-28">
+
+      <div v-for="feat in features" class="md:basis-1/2 lg:basis-1/3 px-5 xl:px-12 mt-20">
+        <component :is="icons[feat.icon]" class="mb-6" />
+        <h5 class="text-3xl sm:text-4xl font-bold mb-8">
+          <Logo class="inline w-auto h-7 sm:h-auto" /> {{ feat.title }}
+        </h5>
+        <p class="text-lg opacity-50 max-w-xl">
+          {{ feat.description }}
+        </p>
+      </div>
+
+    </div>
   </section>
 </template>
