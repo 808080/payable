@@ -15,7 +15,8 @@ export default {
       colors: {
         primary: '#7CDDAE',
         'primary-dark': '#65C295',
-        secondary: '#022128'
+        secondary: '#022128',
+        grey: '#D9D9D9'
       },
       fontFamily: {
         ginka: ['Ginka', 'sans-serif'],

@@ -11,6 +11,9 @@ const icons = {
 
 const currentSolution = ref(0);
 const currentTheme = ref(themes[0] as ThemeColor);
+
+const testimonials = ref<HTMLDivElement | null>(null);
+useSlider(testimonials);
 </script>
 
 <template>
@@ -84,7 +87,7 @@ const currentTheme = ref(themes[0] as ThemeColor);
       </TransitionGroup>
 
       <Dots :pagesTotal="solutions.length" @getPage="(p) => currentSolution = p - 1"
-        classDots="bg-[#D9D9D9]/30 size-4 hover:bg-primary/70" classActive="bg-primary w-16" class="gap-2 my-6" />
+        classDots="bg-grey/30 size-4 hover:bg-primary/70" classActive="[&&]:bg-primary w-16" class="gap-2 my-6" />
     </div>
 
     <div>
@@ -106,12 +109,12 @@ const currentTheme = ref(themes[0] as ThemeColor);
     </div>
   </section>
 
-  <section class="text-center py-20 md:py-36">
-    <Badge class="mb-6">
-      Testimonials
-    </Badge>
+  <section class="py-20 md:py-36">
+    <div class="px-3 text-center">
+      <Badge class="mb-6">
+        Testimonials
+      </Badge>
 
-    <div class="px-3">
       <h2 class="text-3xl lg:text-[3.125rem]/[1.2] mb-6">Real stories from real customers.</h2>
 
       <p class="text-lg opacity-50">See what our partners are saying about our services.</p>
@@ -123,5 +126,33 @@ const currentTheme = ref(themes[0] as ThemeColor);
     <Dots :pagesTotal="themes.length" @getPage="(p) => currentTheme = themes[p - 1]"
       classDots="opacity-40 size-5 sm:size-8 hover:opacity-70" :classPerDot="themesClasses"
       classActive="[&&]:opacity-100 w-16 sm:w-[100px]" class="gap-5 my-6 justify-center" />
+  </section>
+
+  <section class="py-8 lg:py-28 px-4 lg:px-8 max-w-[1920px] mx-auto">
+    <div class="px-3 text-center mb-7 lg:mb-16">
+      <Badge class="mb-6">
+        Testimonials
+      </Badge>
+
+      <h2 class="text-3xl lg:text-[3.125rem]/[1.2] mb-6">Real stories from real customers.</h2>
+
+      <p class="text-lg opacity-50">See what our partners are saying about our services.</p>
+    </div>
+
+    <div ref="testimonials" class="flex gap-3 lg:gap-6 overflow-x-scroll snap-x snap-mandatory no-scrollbar py-5">
+      <div v-for="_ in 7"
+        class="bg-[#082C34] rounded-3xl p-5 lg:p-10 lg:pb-12 min-w-[288px] sm:min-w-[340px] md:min-w-[400px] lg:min-w-[646px] snap-start">
+        <p class="md:text-lg lg:pr-16">
+          “payabl. has proven its commitment to long-term merchant relationships. Throughout the many years of our
+          collaboration, the payabl. team has maintained the same unrivaled standards in terms of customer service,
+          responsiveness, system reliability, and risk management support, which are essential for our business.”
+        </p>
+
+        <div class="flex items-center mt-12">
+          <div class="size-[53px] bg-grey rounded-full mr-6"></div>
+          <p class="font-bold text-lg md:text-[1.375rem]">Name Surname</p>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
