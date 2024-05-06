@@ -155,4 +155,14 @@ useSlider(testimonials);
       </div>
     </div>
   </section>
+
+  <section class="p-3 my-14 lg:mt-36 lg:mb-28">
+    <div
+      class="max-w-[1396px] text-secondary mx-auto bg-white rounded-3xl p-8 md:p-[90px] bg-[url('~/assets/images/contact-bg.png')] bg-no-repeat bg-right-bottom sm:bg-[175px_top] bg-[length:95%_100%] duration-500 hover:bg-[length:100%_100%] sm:hover:bg-[0px_top]">
+      <h2 class="text-3xl lg:text-[3.125rem]/[1.1] font-bold mb-9 max-w-4xl">See how we can help grow your business.
+      </h2>
+
+      <Button>Contact Us</Button>
+    </div>
+  </section>
 </template>
