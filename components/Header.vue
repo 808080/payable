@@ -2,25 +2,6 @@
 import IconMenu from '~/assets/images/menu.svg';
 import IconClose from '~/assets/images/close.svg';
 
-const links = [
-  {
-    label: 'Products',
-    to: '/'
-  },
-  {
-    label: 'Capabilities',
-    to: '/capabilities'
-  },
-  {
-    label: 'Integration',
-    to: '/integration'
-  },
-  {
-    label: 'About',
-    to: '/about'
-  }
-];
-
 const isOpen = ref(false);
 const nav = ref<HTMLDivElement>();
 
@@ -55,7 +36,7 @@ const closeMenu = () => {
         <div ref="nav" class="p-3 lg:p-0 lg:flex justify-between w-full ">
           <nav class="lg:max-w-3xl w-full mx-auto max-h-96 overflow-y-auto">
             <ul class="lg:flex items-center lg:text-center text-2xl lg:text-base">
-              <li v-for="{ label, to } in links" :key="to" class="w-full">
+              <li v-for="{ label, to } in linksHeader" :key="to" class="w-full">
                 <NuxtLink :to class="p-2 hover:text-primary duration-200 font-bold block" @click="closeMenu">
                   {{ label }}
                 </NuxtLink>

@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import { themesClasses } from './utils/data';
+import { themesClasses } from './utils/mockData';
 
 export default {
   content: [

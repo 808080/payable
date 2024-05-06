@@ -64,3 +64,38 @@ export const themesClasses = themes.map(t => `bg-[${t.main}]`);
 
 export type ThemeColor = typeof themes[number];
 export type HexColor = `#${string}`;
+
+export const linksHeader = [
+  {
+    label: 'Products',
+    to: '/'
+  },
+  {
+    label: 'Capabilities',
+    to: '/capabilities'
+  },
+  {
+    label: 'Integration',
+    to: '/integration'
+  },
+  {
+    label: 'About',
+    to: '/about'
+  }
+];
+
+export const linksFooter = [
+  ...linksHeader,
+  {
+    label: 'Capabilities',
+    to: '/capabilities'
+  },
+  {
+    label: 'Integration',
+    to: '/integration'
+  },
+  {
+    label: 'About',
+    to: '/about'
+  }
+];
