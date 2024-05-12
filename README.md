@@ -14,6 +14,20 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 ```
 
+## Run with Docker
+
+Build image
+
+```bash
+docker build -t payable .
+```
+
+Run container
+
+```bash
+docker run -p 3000:3000 payable
+```
+
 ## Deployed preview
 
 [deployment](https://payable-liard.vercel.app/)
